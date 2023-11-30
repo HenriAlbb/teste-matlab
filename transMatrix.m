@@ -1,9 +1,19 @@
-function T = transMatrix(alpha, a, d, theta)
+function T = transMatrix(a, b, c, d)
 
-    T = [cos(theta), -sin(theta), 0, a;...
-        sin(theta)*cos(alpha), cos(theta)*cos(alpha), -sin(alpha), -sin(alpha)*d;...
-        sin(theta)*sin(alpha), cos(theta)*sin(alpha), cos(alpha), cos(alpha)*d;...
-        0, 0, 0, 1];
+    syms alph an theta dn
+    alph = a; % dhparam(1);
+    an = b; % dhparam(2);
+    dn = c ;% dhparam(3);
+    theta = d; % dhparam(4);
+    sa = sin(alph); ca = cos(alph);
+    st = sin(theta); ct = cos(theta) ;
+    
+    t = [	ct	-st	0	an; ...
+        st*ca	ct*ca	-sa	-sa*dn; ...
+        st*sa	ct*sa	ca	ca*dn; ...
+        0	0	0	1];
+
+    T = t;
 
 end
 

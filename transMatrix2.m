@@ -15,5 +15,18 @@ function transMatrix2()
 
     disp(T03);
 
+    syms alph an theta dn
+    
+    
+    sa = sin(alph); ca = cos(alph);
+    st = sin(theta); ct = cos(theta) ;
+    
+    t = [	ct	-st	0	an; ...
+        st*ca	ct*ca	-sa	-sa*dn; ...
+        st*sa	ct*sa	ca	ca*dn; ...
+        0	0	0	1];
+
+    disp(t)
+
 end
 
